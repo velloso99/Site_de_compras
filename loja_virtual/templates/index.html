@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Vitrine de Produtos</h2>
+<div class="vitrine">
+  {% for produto in produtos %}
+    <div class="produto">
+      <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+      <h3>{{ produto.nome }}</h3>
+      <p>R$ {{ produto.preco }}</p>
+      <a href="{{ produto.link_externo }}" target="_blank">Comprar</a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
